@@ -1,0 +1,33 @@
+.header {
+  align-items: center;
+  background: #f8f8f8;
+  border-bottom: #e7e7e7 1px solid;
+  display: flex;
+  height: 80px;
+  padding: 0 30px;
+}
+
+.logo {
+  color: #777;
+  font-size: 50px;
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.navItem {
+  float: left;
+}
+
+.navItem a {
+  color: #777;
+  font-size: 25px;
+  padding: 10px;
+  transition: color 0.5s;
+}
+
+.navItem.activeNavItem a,
+.navItem a:hover {
+  color: #333;
+}
