@@ -1,6 +1,7 @@
 import { h, render } from 'preact'
 
-import './reset.css'
+import './styles/reset.css'
+import './styles/globals.css'
 import './utils/dev'
 
 import App from './containers/App'

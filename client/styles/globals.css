@@ -1,0 +1,12 @@
+:global .clearfix {
+  clear: both;
+}
+
+body {
+  font-family: "monospace", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
