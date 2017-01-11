@@ -7,7 +7,7 @@ export default class Header extends Component {
   render () {
     return (
       <div className={ styles.header }>
-        <a href='/' className={ styles.logo }>SWAZI SUNDOWNERS</a>
+        <a href='/' className={ styles.logo }>SUNDOWNERS</a>
         <nav className={ styles.nav }>
           <ul>
             <li className={ `${styles.navItem} ${this.activeNavClass('restaurant')}` }><a href='/restaurant'>Restaurant</a></li>
