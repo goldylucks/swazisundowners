@@ -2,6 +2,23 @@
   clear: both;
 }
 
+:global * {
+  box-sizing: border-box;
+}
+
+:global strong {
+  font-weight: bold;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+:global #root {
+  height: 100%;
+}
+
 body {
   font-family: "monospace", Helvetica, Arial, sans-serif;
 }
