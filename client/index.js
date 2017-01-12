@@ -5,13 +5,17 @@ import './utils/dev'
 import './styles/reset.css'
 import './styles/globals.css'
 
-import App from './containers/App'
-const node = document.getElementById('root')
+let node = document.getElementById('root')
+
+// in development, set up HMR:
+if (module.hot) {
+  module.hot.accept('./containers/App', init)
+}
 
 document.getElementById('loading-message').remove()
+init()
 
-render(
-  <App />,
-  node,
-  node.lastChild,
-)
+function init () {
+  const App = require('./containers/App').default
+  node = render(<App />, node, node.lastChild)
+}
