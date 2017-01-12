@@ -7,6 +7,9 @@ import './styles/globals.css'
 
 import App from './containers/App'
 const node = document.getElementById('root')
+
+document.getElementById('loading-message').remove()
+
 render(
   <App />,
   node,
