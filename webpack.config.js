@@ -72,7 +72,7 @@ module.exports = {
   ],
   plugins: (function () {
     const plugins = [
-      new HtmlWebpackPlugin({}),
+      new HtmlWebpackPlugin({ template: 'index.ejs' }),
       new WebpackErrorNotificationPlugin(),
       new webpack.DefinePlugin({
         'process.env': {

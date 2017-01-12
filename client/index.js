@@ -6,8 +6,9 @@ import './styles/reset.css'
 import './styles/globals.css'
 
 import App from './containers/App'
-
+const node = document.getElementById('root')
 render(
   <App />,
-  document.body
+  node,
+  node.lastChild,
 )
