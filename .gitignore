@@ -4,3 +4,4 @@ node_modules/
 *.keystore
 *.log
 web-dist/
+homepage/
