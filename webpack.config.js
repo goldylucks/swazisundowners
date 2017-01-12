@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ENV = process.env.NODE_ENV || 'development'
 const isProd = ENV === 'production'
 const WebpackErrorNotificationPlugin = require('webpack-error-notification')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   debug: !isProd,
@@ -15,7 +16,8 @@ module.exports = {
     index: './index.js',
   },
   output: {
-    path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, '../public'),
+    publicPath: '',
     filename: '[name].[hash].js',
   },
   module: {
@@ -48,8 +50,8 @@ module.exports = {
         loader: 'style!css',
       },
       {
-        test: /\.(png|jpg|wav)$/,
-        loader: 'file',
+        test: /\.(png|jpg|)$/,
+        loader: 'url',
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -80,6 +82,18 @@ module.exports = {
         },
       }),
     ]
+
+    // add these after adding icons
+    // (make icons from previous logo)
+    // plugins.push(new CopyWebpackPlugin([
+    //   { from: './android*', to: './' },
+    //   { from: './apple-touch-icon.png', to: './' },
+    //   { from: './browserconfig.xml', to: './' },
+    //   { from: './favicon*', to: './' },
+    //   { from: './manifest.json', to: './' },
+    //   { from: './mstile-150x150.png', to: './' },
+    //   { from: './safari-pinned-tab.svg', to: './' },
+    // ]))
 
     if (isProd) {
       plugins.push(new webpack.optimize.OccurrenceOrderPlugin(false))
