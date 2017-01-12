@@ -2,7 +2,7 @@ import { h, Component } from 'preact'
 
 import Header from '../../components/Header'
 import ImageBox from '../../components/ImageBox'
-
+import boxesData from './homeBoxes'
 import styles from './Home.css'
 
 export default class Home extends Component {
@@ -17,13 +17,8 @@ export default class Home extends Component {
   }
 
   renderImageBoxes () {
-    return imagesBoxesData.map(item => (
+    return boxesData.map(item => (
       <ImageBox { ...item } className={ styles.imageBox } />
     ))
   }
 }
-
-const imagesBoxesData = [
-  { title: 'Bis ass pool', href: '/activities', imgSrc: '/client/pool.jpg' },
-  { title: 'Delicious meals', href: '/restaurant', imgSrc: '/client/restaurant.jpg' },
-]

@@ -1,14 +1,7 @@
 .imageBox {
+  background-position: center;
+  background-size: cover;
   position: relative;
-}
-
-.image {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: -1;
 }
 
 .overlay {
@@ -26,6 +19,8 @@
 
 .title {
   color: #777;
+  padding-left: 10px;
+  padding-right: 10px;
   transition: color 0.5s;
 }
 
@@ -41,7 +36,7 @@
 }
 
 .more {
-  border: 1px solid #e7e7e7;
+  border: 1px solid #333;
   border-radius: 20px;
   color: #777;
   padding: 8px 20px;
