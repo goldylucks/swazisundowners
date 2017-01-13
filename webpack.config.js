@@ -16,7 +16,7 @@ module.exports = {
     index: './index.js',
   },
   output: {
-    path: path.join(__dirname, '../public'),
+    path: path.join(__dirname, 'public'),
     publicPath: '',
     filename: '[name].[hash].js',
   },
@@ -83,19 +83,11 @@ module.exports = {
       }),
     ]
 
-    // add these after adding icons
-    // (make icons from previous logo)
-    // plugins.push(new CopyWebpackPlugin([
-    //   { from: './android*', to: './' },
-    //   { from: './apple-touch-icon.png', to: './' },
-    //   { from: './browserconfig.xml', to: './' },
-    //   { from: './favicon*', to: './' },
-    //   { from: './manifest.json', to: './' },
-    //   { from: './mstile-150x150.png', to: './' },
-    //   { from: './safari-pinned-tab.svg', to: './' },
-    // ]))
 
     if (isProd) {
+      plugins.push(new CopyWebpackPlugin([
+        { from: 'images', to: 'images' },
+      ], { copyUnmodified: true }))
       plugins.push(new webpack.optimize.OccurrenceOrderPlugin(false))
       plugins.push(new webpack.optimize.DedupePlugin())
       plugins.push(new webpack.optimize.UglifyJsPlugin({
@@ -113,5 +105,6 @@ module.exports = {
   }()),
   devServer: {
     contentBase: './client',
+    outputPath: path.join(__dirname, 'public'),
   },
 }
