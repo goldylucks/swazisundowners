@@ -2,6 +2,7 @@ const rucksack = require('rucksack-css')
 const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ResourceHintWebpackPlugin = require('resource-hints-webpack-plugin')
 const ENV = process.env.NODE_ENV || 'development'
 const isProd = ENV === 'production'
 const WebpackErrorNotificationPlugin = require('webpack-error-notification')
@@ -75,6 +76,7 @@ module.exports = {
   plugins: (function () {
     const plugins = [
       new HtmlWebpackPlugin({ template: 'index.ejs' }),
+      new ResourceHintWebpackPlugin(),
       new WebpackErrorNotificationPlugin(),
       new webpack.DefinePlugin({
         'process.env': {
@@ -82,7 +84,6 @@ module.exports = {
         },
       }),
     ]
-
 
     if (isProd) {
       plugins.push(new CopyWebpackPlugin([
