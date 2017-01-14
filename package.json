@@ -13,6 +13,7 @@
     "lintstyle": "stylelint 'client/**/*.css'",
     "hooks": "./scripts/hooks.sh",
     "surge": "surge",
+    "deploy": "npm run build && surge -p ./public -d swazidowners.surge.sh",
     "lintstyle:fix": "stylefmt -r client/**/*.css"
   },
   "repository": {
