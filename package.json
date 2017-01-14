@@ -12,6 +12,7 @@
     "lint:fix": "npm run lint -- --fix",
     "lintstyle": "stylelint 'client/**/*.css'",
     "hooks": "./scripts/hooks.sh",
+    "surge": "surge",
     "lintstyle:fix": "stylefmt -r client/**/*.css"
   },
   "repository": {
@@ -43,6 +44,7 @@
     "eslint-plugin-react": "^6.9.0",
     "eslint-plugin-standard": "^2.0.1",
     "file-loader": "^0.9.0",
+    "git-scripts": "^0.2.1",
     "html-webpack-plugin": "^2.26.0",
     "json-loader": "^0.5.4",
     "postcss-loader": "^1.2.1",
@@ -51,6 +53,7 @@
     "stylefmt": "^5.0.3",
     "stylelint": "^7.7.1",
     "stylelint-config-standard": "^15.0.1",
+    "surge": "^0.18.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2",
@@ -59,5 +62,10 @@
   "dependencies": {
     "preact-router": "^2.3.2",
     "preact": "^7.1.0"
+  },
+  "git": {
+    "scripts": {
+      "pre-commit": "npm run lint && npm run lintstyle"
+    }
   }
 }
